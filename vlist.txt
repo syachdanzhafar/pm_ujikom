@@ -1,0 +1,6 @@
+CREATE VIEW vlist_rekammedis AS
+SELECT
+trekammedis.no_transaksi, trekammedis.tgl_berobat, tpeserta.nama_peserta, tpeserta.jenis_kelamin, trekammedis.keluhan, tpoli.nama_poli, tbidan.nama_bidan, trekammedis.biaya_admin
+FROM tpeserta INNER JOIN trekammedis ON trekammedis.kd_peserta = tpeserta.kd_peserta
+INNER JOIN tbidan ON tbidan.kd_bidan = trekammedis.kd_bidan
+INNER JOIN tpoli ON tpoli.kd_poli = tbidan.kd_poli
